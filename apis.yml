@@ -1,23 +1,70 @@
 aid: baebies
+
 name: Baebies
-description: 'Baebies is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Baebies is a diagnostics company specializing in digital microfluidics technology to deliver rapid, multifunctional point‑of‑care
+  tests. Based in Durham, North Carolina, Baebies creates platforms such as the FINDER series for G6PD, Flu A/B, SARS‑CoV‑2, and Anti‑Factor Xa,
+  aiming to bring high‑quality testing to laboratories and bedside settings worldwide.
+
 url: https://raw.githubusercontent.com/api-evangelist/baebies/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+- Diagnostics
+- Digital Microfluidics
+- Point-of-Care
+- Healthcare
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/baebies-hosts.yml
+- type: Vendors
+  url: vendors/baebies-vendors.yml
+- type: PrivacyPolicy
+  url: https://baebies.com/privacy-policy/
+- type: Blog
+  url: https://baebies.com/category/blog/
+- type: DomainSecurity
+  url: security/baebies-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/baebies
+  url: https://baebies.com
+
+apis:
+- name: Baebies API
+  description: Baebies provides diagnostic testing platforms; see their website for product information.
+  humanURL: https://baebies.com
+  aid: baebies:baebies-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Baebies website provides only marketing pages with no machine‑readable API specification.
+  evidence:
+  - url: https://api.baebies.com/openapi.json
+    status: 0
+  checked: 2026-09-27
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
