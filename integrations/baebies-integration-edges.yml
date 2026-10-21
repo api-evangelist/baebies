@@ -1,0 +1,110 @@
+edges:
+- partner_name: FDA 510(k) premarket notifications (IVD / surgical panels)
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K261837
+  category: FDA-cleared IVD / surgical device
+  contract_reference:
+    register: openFDA device/510k (decision_date >= 2016-01-01; panels CH HE IM MI PA TX SU OR)
+    standard: FDA 510(k) premarket clearance (IVD / surgical panels)
+    spec_file: null
+    role: fda-510k-holder
+    registered_name: Baebies, Inc.
+    matched_domain: baebies.com
+    matched_by: domain
+    detected_by: sweep-ivd-diagnostics.py
+    detected: '2026-10-21'
+    register_id: K261837
+    certified_products:
+    - product: FDA 510(k) clearance, Clinical Chemistry panel
+      product_type: Clinical Chemistry
+      review_panel: CH
+      lapsed: false
+      latest_decision: '2017-02-03'
+      devices_sample:
+      - SEEKER System
+    - product: FDA 510(k) clearance, Hematology panel
+      product_type: Hematology
+      review_panel: HE
+      lapsed: false
+      latest_decision: '2022-09-14'
+      devices_sample:
+      - FINDER G6PD
+    - product: FDA 510(k) clearance, Microbiology panel
+      product_type: Microbiology
+      review_panel: MI
+      lapsed: false
+      latest_decision: '2026-09-11'
+      devices_sample:
+      - FINDER Flu A&B/SARS-CoV-2 Test
+    signal_note: certified_products = one entry per FDA review PANEL held, never per device; openFDA carries decisions,
+      not withdrawals, so lapsed is always false
+    identity: wikidata Q30255104 'Baebies' P856 http://baebies.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  detected_by: sweep-ivd-diagnostics.py
+  first_seen: '2026-10-21'
+- partner_name: FDA CLIA test categorizations
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfClia/search.cfm
+  category: CLIA-categorized test system maker
+  contract_reference:
+    register: FDA CLIA test categorization database (clia_detail.zip)
+    standard: FDA CLIA categorization
+    spec_file: null
+    role: clia-categorized-test-system-maker
+    registered_name: Baebies
+    matched_domain: baebies.com
+    matched_by: domain
+    detected_by: sweep-ivd-diagnostics.py
+    detected: '2026-10-21'
+    register_id: CW250011
+    certified_products:
+    - product: FDA CLIA categorization, high complexity
+      product_type: high
+      lapsed: false
+      latest_effective: 2017/02/09
+      test_systems_sample:
+      - Baebies, Inc. Seeker System
+    - product: FDA CLIA categorization, moderate complexity
+      product_type: moderate
+      lapsed: false
+      latest_effective: 2022/09/23
+      test_systems_sample:
+      - Baebies, Inc. FINDER Instrument
+    - product: FDA CLIA categorization, waived complexity
+      product_type: waived
+      lapsed: false
+      latest_effective: 2026/03/30
+      test_systems_sample:
+      - Baebies, Inc. FINDER Instrument
+    signal_note: 'certified_products = one entry per CLIA COMPLEXITY held (waived / moderate / high), never per
+      test system; the database lists categorizations, not withdrawals: lapsed false'
+    identity: wikidata Q30255104 'Baebies' P856 http://baebies.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  detected_by: sweep-ivd-diagnostics.py
+  first_seen: '2026-10-21'
+generated: '2026-10-21'
+method: searched
+source:
+- https://api.fda.gov/device/510k.json
+- https://api.fda.gov/device/pma.json
+- https://api.fda.gov/device/registrationlisting.json
+- https://www.accessdata.fda.gov/premarket/ftparea/clia_detail.zip
+- https://ec.europa.eu/tools/eudamed/api/
+- https://www.advamed.org/advameddx/members/
+checked:
+- https://api.fda.gov/device/510k.json
+- https://api.fda.gov/device/pma.json
+- https://api.fda.gov/device/registrationlisting.json
+- https://ec.europa.eu/tools/eudamed/api/
+- https://www.accessdata.fda.gov/premarket/ftparea/clia_detail.zip
+- https://www.advamed.org/advameddx/members/
